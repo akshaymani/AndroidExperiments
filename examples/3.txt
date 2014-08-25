@@ -1,0 +1,41 @@
+-> Incase of Content Provider, Content Resolver is used and Intent is not used
+
+-> Incase of Implicit Intents, Intent Resolution is used to check which all activities can complete the following action [The exported component must provide the intent filter section]
+
+-> Intents are matched to the intent filter section [action / data (optional) / category]
+
+-> Implicit intents require the category to be there in the manifest, else it will fail the cateogry test
+
+-> Category check is just a string comparison, it is just a way of sub-diving the components
+
+-> Only one intent can be launched by an action [intent.action_view etc etc]
+
+-> Custom actions require the package name ?
+
+-> Package Manager stores the category of all the applications
+
+-> Zero or more categories can be attached to an Intent object [Intent Resolution - Single Action + Single Data + All Categories have to match + Extras not used - How check works :)] - Notepad code look at :-o
+
+-> Careful of how to use categories while exposing the application 
+
+-> Categories most often appear in-case of System Applications
+
+-> We can queryIntentActivities / queryIntentServices / queryBroadcaseReceivers - List<ResolveInfo> object is returned containing the component details
+
+-> Pending Intents [If we want to launch applications at a deferred time] - Alarm Manager [Register/Launch - Using SecurityContext provided (Senders Identity and Security)] - Indirect way of launching application components via other application contexts -> [Value of the pending intent is not exposed, only a handle to pending intent is provided]
+
+-> Notification Manager like Alarm Manager is used to manage notifications
+
+-> Application Resources [Arbitrary Names are not allowed] -> Example state of widget (automatic change), adding animations, we can draw very special shapes using XML (helpful for creating gradients)
+
+-> View is the basic building block for Android User Interfaces
+
+-> Creating your own widget -> Extend the View class
+
+-> View group is a collection of View Objects -> Layouts are ViewGroups
+
+-> Combined time in hierarchy perspective for our application should be less than 16 milliseconds
+
+-> Adapter based views [Dynamic Views -  Example List / Grid / Gallery / Spinner]
+
+-> Customize the Adapter [ArrayAdapter] or build your own Adapter [sub-class BaseAdapter]

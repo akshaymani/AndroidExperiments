@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF00"
+    android:padding="15dp"
+    android:gravity="center_horizontal" >
+<!-- Padding adds space between the text / widget while margin adds space around the widget / Layout Weight decides how to utilize the extra space on the screen-->
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:padding="30dp"
+        android:layout_margin="15dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:layout_weight="1" />
+
+</LinearLayout>

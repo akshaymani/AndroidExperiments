@@ -1,0 +1,76 @@
+-> Menus and Action Bar -> Text Views separate context menu [popup / action bar] but only a single options menu
+
+-> Register for context menu - add items to context menu - onContextItemSelected - CountryFrag - delete a country on long click
+
+-> Activities before HoneyComb used to get a title bar (title / embellishment) - no buttons etc - Now Action Bar is there [3 to 4 main options displayed - rest come in *** button, that is overflow menu and navigation control is there]
+
+-> Navigation control is different from page swipe which is done using View Pager
+
+-> TargetSDkVersion = 11 for Action Bar 
+
+-> We can hide the action bar also
+
+-> Action Items on our action bar vs the options menu
+
+-> http://jgilfelt.github.io/android-actionbarstylegenerator/ - Android Action Bar Style Generator [Theme Value = Theme.MyCustomTheme - Android Manifest file]
+
+-> Split Action Bar [Action Bar on top and bottom - android:uiOptions="splitActionBarWhenNarrow"]
+
+-> FragmentStatePageAdaptor - If no of tabs is very high [destroys view + fragment] otherwise use FragmentPagerAdapter if no of tabs is like 5 to 6 [destroy view only]
+
+-> Data Persistence [Internal / External Storage] - Even if external storage is not there in the device, some portion of internal storage is mounted as external storage
+
+-> Android's file system is a Linux based system
+
+-> [Important] In Linux we have a userID and we cannot write to other folders but in android the application gets a userID - Application Sandbox 
+
+-> For every application - /databases - SQLiteDB , /lib - .so file is copied into the .apk file [not like linux machine], /shared_prefs [XML file is written - Key / Value pairs], 
+	/cache - apps can use cache but if space is low, cache is cleared out and /files folder
+
+-> Push and Pull files to emulator for testing purposes using DDMS or adb
+
+-> Device is rooted or not - apps may not start depending on it :-o
+
+-> MODE_WORLD_READABLE is not there jellybean onwards - File Output Stream [Internal Storage]
+
+-> External Storage provides no security - path gets changed [getExternalSotrageState]
+
+-> Shared Preferences UI Framework - Preference Activity [For example user tells upfront whether he wants to see Large Images or Small Images] - Root Node is the PreferenceScreen
+
+-> SQLite Studio / Browser / Firefox Plugin / sqlite3 command line - For creating databases
+
+-> MotionEvent Object -> Via the Activity, it is delivered to the child - Head Testing [Action - Down,Up,Move / Location / TimeStamp / Pressure / Size Of Touch (ellipse - finger) / etc.]
+
+-> onTouchEvent - MotionEvent Object - Create a customized view - subclass of view
+
+-> Content Provider allows sharing of data among applications - Pre-defined content providers in android in a particular package (android.provider) - MediaStore [to know all the media files on my system] / CallLog
+
+-> Every data provider's provides a list of rows and columns - Every content provided has a content uri
+
+-> For system apps we don't need the package name or authority name but for third party apps we need it
+
+-> For querying content provider, we can't work with intents - we need content resolvers
+
+-> Profiling our application - Make us of Trace View
+
+-> For profiling memory - tool provided by eclipse - as android one is not there / not good :)
+
+-> For memory profiling - DUMP HPROF File - But we can't load it as it is to Memory Analyzer - So need to convert it to format which analyzer can understand
+	-> Inside platform-tools - hprof-conv sourcefilename destfilename [Full Path of the files is required] 
+	-> Google I/O Talk for Memory Analying in Android
+
+-> Enabling GPU Overdrar [Green takes 3 iterations - Red take 4 or more and so] - Developer Options in Android Phone
+
+-> Monitoring Section - Profile GPU Rendering - Developer Options - Time taken to draw each frame
+
+-> OpenGL Trace View in DDMS - To check for > 16 ms issues [Texture Calls]
+
+-> To upload signed project - Android Tools Option on Right Click the Project and Export it to the Google Play Store
+
+-> IOS apps have a manual review process - takes about week or so but Android some automated check is this
+
+-> Proguard for securing our code in Android
+
+-> 25 Dollars to become a member of Google Play Store - Ad Mob and not Ad Sense
+
+-> NewsReader - Adding our custom permission

@@ -1,0 +1,23 @@
+-> Handler gets hold of the looper and updates the UI
+
+-> Member variable as handler can access the imageView, but creating our own Handler it does not have access to imageView so passing the reference to it
+
+-> If messages in handlers are sent, then handler has to figure out alot if no of threads are passing message to it -> so better approach would be to have runnable objects posted
+
+-> static handlers cannot change the imageView object
+
+-> We can make any thread a worker thread or a background thread [Thread + Looper + Message Queue] - Multiple Handlers updating the same thread by posting messages in the queue 
+
+-> Worker thread will not stop once its run() method completes execution, it keeps on waiting for messages
+
+-> Service also runs in the Main Thread and so we have to be careful of not making blocking call for Network Operations etc, so we have to create a Background Thread
+
+-> If the activity goes to the background, threads keep on running but it will get a lower priority - might get terminated
+
+-> Types of Services:
+	-> Unbound or Local Service [Lifecycle - created / started / stops / destroyed] - Generally runs in the same process as other application component - if something small needs to be done
+	-> Bound Service - [Lifecyle - created / my application (multiple services also possible) binds to service (can be considered as a remote object) - IDownloader / shutdown when all the clients are unbind] - Most of the time runs in a separate thread
+
+-> Sticky Broadcast - They remain in memory / Local Broadcast / Global Broadcast
+
+-> In manifest file -> launch Mode = "standard" [Always creates new activity if there is a pending intent] / = "singleTop" - don't create a new activity

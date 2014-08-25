@@ -1,0 +1,98 @@
+Android Training:
+
+-> Open Handset Alliance -> Promoted by Android -> No Owner Company -> Google primarily responsible for Development of it
+
+-> Apache 2.0 License -> Does not have a copylife clause ->  Don't have to give back to the android world -> Unlike GPL license
+
+-> Flagship devices for new updates -> After Google does a code drop
+
+-> cyanogenmod community - Own version of android
+
+-> IOS Distribution App [App Store / Enterprise Store] while Android has various App Stores [amazon apps / google play (30% charge of revenue) / samsung apps]
+
+-> Gingerbread [Android 2.3 -> API Level 9/10] -> Android Broke In
+
+-> IOS -> view system -> OpenGL
+
+-> Android -> view system -> SGL -> Parallel track added later for OpenGL
+
+-> Developers Build Applications as per the API Level but it can still run on older version of Android [Important]
+
+-> Usage Space -> KitKat - 18% / ICS - 11% / Gingerbread - 13%/ Froyo - 1% / Jelly Bean - 57%
+
+-> Binder (IPC) Driver -> Customized for Android on comparison to Linux/UNIX kernel along with Power Management
+
+-> Android Native Libraries are in C/C++ -> But out Apps our written in Java -> So interaction handled by Dalvik Virtual Machine by Android Runtime, it is optimized specifically for mobile devices -> 40% less memory usage -> Register based on comparison to stack based approach of JVM -> application executable also uses lesser memory because of it
+
+-> Most of the java libraries were ported over in the core libraries in Android
+
+-> Mostly/Generally for performance related issues with UI etc, we can talk directly to the native C++ libraries.
+
+-> Emulator - GenyMotion + Virtual Box -> Run application much faster using the native emulator -> Intel hardware acceleration support but not reliable
+
+-> Android Emulator / Android Debug Bridge / Dalvik Debug Monitor Service Tools 
+
+-> Android Virtual Device -> Device Configuration
+
+-> In the platform tools folder -> adb shell -> cd data/data -> cd com.android.browser -> cd databases -> sqlite3 browser2.db -> .tables -> select * from bookmarks;
+
+-> adb kill-server [Uncheck the snapshot option and try again while launching the emulator] if we run into any problem with the server and other adb options
+
+-> GPX XML File -> Create WayPoints -> Load it using emulator option in DDMS and KML file [Google earth uses this]
+
+-> Android Project -> Application Name [What comes in Google Play Store] / Project Name [Local Project Name] / Package Name needs to be unique across the world  [It's a place-holder]
+
+-> Create activity option to be checked -> If our application has atleast one screen -> Every activity typically has a java file [logic] and will have an xml file [layout] -> declarative form of creating User interface
+
+-> R.java file is required to work with the resources
+
+-> Resources (images/xml file/songs/videos/binary file/ that is anything not java) -> put it in assets folder but they are not compiled or the resources in res folder are compiled (R.java is updated automatically)
+
+-> In the bin folder apk file is present and in the libs folder external libraries required are present
+
+-> @drawable looks at the device configuration and automatically scales the image but this operation is expensive to the battery so different folder have the scaled values pre-available
+
+-> values-XX code for localization is used -> once user selects the language -> automatically configured
+
+-> Android Manifest has all the registered activities for our application
+
+-> Multiple activity essentially means multiple icons but it may be the same project
+
+-> Android Application Runtime -> Fully Multitasking OS -> IOS until 3 was not multitasking
+
+-> Internal Storage [Linux File System] / SD Card [FAT32/Ext 3/Ext 4] and SQLite Database
+
+-> Rename the .apk file to .zip file and unzip it :)
+
+-> Launching an app, commuunication between apps, and listen to system / third party events -> Intents are used
+
+-> Target component may not be up for intent to be delivered
+
+-> Every application has a activity stack
+
+-> Each activity runs in its own process
+
+-> Implicit vs Explicit (Name of the component to be activated) Intents
+
+-> Local Activity Context is per Activity and the other is Global Application Context
+
+-> Application Manifest [App Info / specify permissions required by app / two more ?]
+
+-> When my activity terminates, I need to save the info
+
+-> When we press the back button, the activity closes but what is empty process because it is expensive to fork processes
+
+-> Where is lint used in android project - to check if we are following the best practices and helps in fixing them
+
+-> In both android and IOS -> Don't kill the applications as it's against conventional wisdom for performance sake 
+
+-> Can't kill the process in IOS [Mandatory]
+
+-> Check the oom_adj no ? [Range from -17 to +15]
+	adb -s emulator-5554 shell -> ps -> cat /proc/PROCESS_ID/oom_adj
+
+
+
+
+
+

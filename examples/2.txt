@@ -1,0 +1,47 @@
+-> For logging - Logcat tool is part of DDMS [adb logcat] - android.util.Log - Tag is the name of the class where we are logging the information
+
+-> Every sub-class of Activity must:
+	-> An activity for a view
+	-> Using either XML or Java [90% of apps use XML - depends when you want to build the views]
+	-> Be declared in the android manifest XML
+	
+-> While creating a new second Activity in the project -> If we mark it as a Launcher Activity -> Then we will have to icons on Android Emulator
+
+-> Content View in the Activity is pointing to the relative layout
+
+-> Multiple activities cannot send the intent to say third activity, because at a moment only one activity is in focus
+
+-> Activity State:
+	-> Activity Termination [Configuration Change or System runs low on Memory]
+	-> onSaveInstanceState is called before our activity is terminated by system
+	
+-> Activity LifeCycle:
+	-> onCreate -> Creation
+	-> onStart -> When user navigates to the activity
+	-> onResume -> User events cannot be triggered until this is called
+	-> If our activity is partially visible it goes to Pause Mode, but if it is not visible - onStop() is called after which it may get terminated
+	-> onDestroy() is not guaranteed that it will be called and if we have to save the state info of our activity then we should do it in onStop() method
+	
+-> Fragments - Added when support for tablets was introduced [The work done via fragments can be done by having multiple view objects inside a single activity but it is not preferred - complexity is more]
+	-> Embedded inside an activity and they cannot be launched via an intent
+	-> Gives the ability to create flexible UI
+	-> Navigation can be controlled not only by an activity but by Fragments also
+
+-> Types of Fragments:
+	-> UI Fragments [XML + Java] and BackGround Fragments [Only Java]
+	
+-> Implementation of Fragments -> Backward Compatibility is important -> Use the one in support jar instead of Fragments class in android.app
+
+-> onClick() does not work in fragments for buttons
+
+-> For backward compatibilty - activity that needs to support of fragments, must extend from fragment activity [Before API 11 / HoneyComb 3.0]
+
+-> Fragment Life Cycle -> onCreate, onAttach, onDetach, etc
+
+-> Incase of fragments, view is always destroyed because views are very heavy even though the objects may be retained via attach/detach methods
+
+-> Fragments are not aware of the back buttons but activity is aware of them
+
+-> An intent meant for an activity is never sent to a service
+
+-> Components external to our application, we need the package as well as the Activity Name
