@@ -1,5 +1,3 @@
-Android Training:
-
 -> Open Handset Alliance -> Promoted by Android -> No Owner Company -> Google primarily responsible for Development of it
 
 -> Apache 2.0 License -> Does not have a copylife clause ->  Don't have to give back to the android world -> Unlike GPL license
